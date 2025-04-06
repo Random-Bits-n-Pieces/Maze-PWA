@@ -1,0 +1,267 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* RESET COMPLETE */
+
+:root {
+  --primary-Color: #2a86b2;
+  --maze-Border-Color: #16cc1f;
+  --gate-Color: brown;
+}
+
+body {
+  background-color: rgb(15, 15, 15);
+  color: rgb(200, 200, 200);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+main {
+  align-items: center;
+  text-align: center;
+  place-content: center;
+  margin: 5% auto;
+  width: 362px;
+  min-height: 1vh;
+}
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: 36px 36px 36px 36px 36px 36px 36px 36px 36px 36px;
+  grid-template-rows: 36px 36px 36px 36px 36px 36px 36px 36px 36px 36px;
+  border: 1px solid var(--maze-Border-Color);
+}
+
+.gameTile {
+  background-color: antiquewhite;
+  color: #2a86b2;
+  border: 2px solid white;
+}
+
+.borderTopLeft {
+  border-top-color: var(--maze-Border-Color);
+  border-left-color: var(--maze-Border-Color);
+}
+
+.borderTop {
+  border-top-color: var(--maze-Border-Color);
+}
+
+.borderTopRight {
+  border-top-color: var(--maze-Border-Color);
+  border-right-color: var(--maze-Border-Color);
+}
+
+.borderLeft {
+  border-left-color: var(--maze-Border-Color);
+}
+
+.borderRight {
+  border-right-color: var(--maze-Border-Color);
+}
+
+.borderBottomLeft {
+  border-bottom-color: var(--maze-Border-Color);
+  border-left-color: var(--maze-Border-Color);
+}
+
+.borderBottom {
+  border-bottom-color: var(--maze-Border-Color);
+}
+
+.borderBottomRight {
+  border-bottom-color: var(--maze-Border-Color);
+  border-right-color: var(--maze-Border-Color);
+}
+
+.borderTopBottom {
+  border-bottom-color: var(--maze-Border-Color);
+  border-top-color: var(--maze-Border-Color);
+}
+
+.borderTopBottomLeft {
+  border-bottom-color: var(--maze-Border-Color);
+  border-top-color: var(--maze-Border-Color);
+  border-left-color: var(--maze-Border-Color);
+}
+
+.borderTopBottomRight {
+  border-bottom-color: var(--maze-Border-Color);
+  border-top-color: var(--maze-Border-Color);
+  border-right-color: var(--maze-Border-Color);
+}
+
+.borderLeftRight {
+  border-left-color: var(--maze-Border-Color);
+  border-right-color: var(--maze-Border-Color);
+}
+
+.borderTopLeftRight {
+  border-left-color: var(--maze-Border-Color);
+  border-right-color: var(--maze-Border-Color);
+  border-top-color: var(--maze-Border-Color);
+}
+
+.borderBottomLeftRight {
+  border-left-color: var(--maze-Border-Color);
+  border-right-color: var(--maze-Border-Color);
+  border-bottom-color: var(--maze-Border-Color);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tileStart {
+  background-color: green;
+}
+
+.tileFinish {
+  background-color: red;
+}
+
+.tileLvl1Boost {
+  color: gold;
+  font-size: medium;
+  padding-top: 4px;
+}
+
+.tileLvl2Boost {
+  color: gold;
+  font-size: large;
+  padding-top: 2px;
+}
+
+.tileLvl3Boost {
+  color: gold;
+  font-size: x-large;
+}
+
+.tileLvl1Cost {
+  color: crimson;
+  font-size: medium;
+  padding-top: 6px;
+}
+
+.tileLvl2Cost {
+  color: crimson;
+  font-size: large;
+  padding-top: 2px;
+}
+
+.tileLvl3Cost {
+  color: crimson;
+  font-size: x-large;
+}
+
+.tilePortal {
+  color: darkblue;
+  font-size: x-large;
+}
+
+.player {
+  display: block;
+  position: absolute;
+  color: #2a86b2;
+  width: 36px;
+  height: 36px;
+  font-size: x-large;
+}
+
+.gateLeft {
+  border-left-color: var(--gate-Color);
+}
+
+.gateRight {
+  border-right-color: var(--gate-Color);
+}
+
+.gateTop {
+  border-top-color: var(--gate-Color);
+}
+
+.gateBottom {
+  border-bottom-color: var(--gate-Color);
+}
+
+.gateLeft.open {
+  border-left-style: dotted;
+}
+
+.gateRight.open {
+  border-right-style: dotted;
+}
+
+.gateTop.open {
+  border-top-style: dotted;
+}
+
+.gateBottom.open {
+  border-bottom-style: dotted;
+}
