@@ -1,0 +1,122 @@
+[
+  [
+    { "allowedMoves": "d", "type": 2 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "as", "type": 0 },
+    { "allowedMoves": "sd", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "as", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "sd", "type": 0 },
+    { "allowedMoves": "as", "type": 0 },
+    { "allowedMoves": "d", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "aws", "type": 0, "hasGate": "d", "openGate": false },
+    { "allowedMoves": "wsd", "type": 0, "hasGate": "a", "openGate": false },
+    { "allowedMoves": "asd", "type": 0 },
+    { "allowedMoves": "as", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "w", "type": 0 },
+    { "allowedMoves": "wd", "type": 0 },
+    { "allowedMoves": "asd", "type": 0, "hasGate": "s", "openGate": true },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "wa", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "sd", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "awd", "type": 0, "hasGate": "w", "openGate": true },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "as", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "wsd", "type": 0 },
+    { "allowedMoves": "wa", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "d", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "asd", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "aws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "wd", "type": 0 },
+    { "allowedMoves": "a", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "sd", "type": 0 },
+    { "allowedMoves": "as", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "sd", "type": 0 },
+    { "allowedMoves": "awd", "type": 0 },
+    { "allowedMoves": "awd", "type": 0 },
+    { "allowedMoves": "awd", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "as", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "sd", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "asd", "type": 0 },
+    { "allowedMoves": "as", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "w", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0, "hasGate": "d", "openGate": true },
+    { "allowedMoves": "ws", "type": 0, "hasGate": "a", "openGate": true },
+    { "allowedMoves": "wd", "type": 0 },
+    { "allowedMoves": "as", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "sd", "type": 0 },
+    { "allowedMoves": "wa", "type": 0 },
+    { "allowedMoves": "wd", "type": 0 },
+    { "allowedMoves": "aws", "type": 0 },
+    { "allowedMoves": "wd", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "aw", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 },
+    { "allowedMoves": "ws", "type": 0 }
+  ],
+  [
+    { "allowedMoves": "w", "type": 3 },
+    { "allowedMoves": "d", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "awd", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "ad", "type": 0 },
+    { "allowedMoves": "aw", "type": 0 },
+    { "allowedMoves": "wd", "type": 0 },
+    { "allowedMoves": "wa", "type": 0 }
+  ]
+]

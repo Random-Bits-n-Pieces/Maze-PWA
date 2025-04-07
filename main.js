@@ -11,20 +11,6 @@ const normalType = 0, boost1Type = 10, boost2Type = 20, boost3Type = 30, cost1Ty
 const keysA = 'a', keysS = 's', keysW = 'w', keysD = 'd', keysAD = 'ad', keysAS = 'as', keysAW = 'aw',keysWS = 'ws', keysWA = 'wa', keysWD = 'wd', keysSD = 'sd';
 const keysASD = 'asd', keysAWD = 'awd', keysWSD = 'wsd', keysAWS='aws', keysAWSD = 'awsd';
 
-
-const gameGridBase = [
-    [{allowedMoves: keysD, type:startType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAS, type:normalType},{allowedMoves: keysSD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAS, type:normalType}],
-    [{allowedMoves: keysSD, type:normalType},{allowedMoves: keysAS, type:normalType},{allowedMoves: keysD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAWS, type:normalType, hasGate: keysD, openGate: false},{allowedMoves: keysWSD, type:normalType, hasGate: keysA, openGate: false},{allowedMoves: keysASD, type:normalType},{allowedMoves: keysAS, type:normalType},{allowedMoves: keysWS, type:normalType}],
-    [{allowedMoves: keysW, type:normalType},{allowedMoves: keysWD, type:normalType},{allowedMoves: keysASD, type:normalType, hasGate: keysS, openGate: true},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysWA, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType}],
-    [{allowedMoves: keysSD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAWD, type:normalType, hasGate: keysW, openGate: true},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWSD, type:normalType},{allowedMoves: keysWA, type:normalType}],
-    [{allowedMoves: keysWS, type:normalType},{allowedMoves: keysD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysASD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWD, type:normalType},{allowedMoves: keysA, type:normalType}],
-    [{allowedMoves: keysWS, type:normalType},{allowedMoves: keysSD, type:normalType},{allowedMoves: keysAS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysSD, type:normalType},{allowedMoves: keysAWD, type:normalType},{allowedMoves: keysAWD, type:normalType},{allowedMoves: keysAWD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAS, type:normalType}],
-    [{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysSD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysASD, type:normalType},{allowedMoves: keysAS, type:normalType},{allowedMoves: keysWS, type:normalType}],
-    [{allowedMoves: keysW, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType, hasGate: keysD,openGate: true},{allowedMoves: keysWS, type:normalType, hasGate: keysA,openGate: true},{allowedMoves: keysWD, type:normalType},{allowedMoves: keysAS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType}],
-    [{allowedMoves: keysSD, type:normalType},{allowedMoves: keysWA, type:normalType},{allowedMoves: keysWD, type:normalType},{allowedMoves: keysAWS, type:normalType},{allowedMoves: keysWD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAW, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType},{allowedMoves: keysWS, type:normalType}],
-    [{allowedMoves: keysW, type:finishType},{allowedMoves: keysD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAWD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAD, type:normalType},{allowedMoves: keysAW, type:normalType},{allowedMoves: keysWD, type:normalType},{allowedMoves: keysWA, type:normalType}]
-];
-
 let gameGrid = [];
 
 let gridX = 0;
@@ -33,8 +19,8 @@ let score = 200;
 let level = 0;
 let isComplete = false, isPortal = false;
 
-player.htmlElement.style.left = player.positionLeft +'px';
-player.htmlElement.style.top = player.positionTop + 'px';
+// player.htmlElement.style.left = player.positionLeft +'px';
+// player.htmlElement.style.top = player.positionTop + 'px';
 
 window.addEventListener('keypress', (event) =>  {
 
@@ -78,7 +64,7 @@ window.addEventListener('keypress', (event) =>  {
     {
         isComplete = true;
         if (score > 0){
-            resetStartPosition();
+            resetMaze();
         }
         else{
             const lblScore = document.getElementById('lblScore');
@@ -244,45 +230,26 @@ function generateBorderClassname(allowedMoves)
     return cssName;
 }
 
-function resetStartPosition()
+function resetMaze()
 {
     const gameBoard = document.getElementsByClassName("gameBoard")[0];
     gameBoard.innerHTML = '';
-    player.positionLeft = Math.floor(gameBoard.getBoundingClientRect().left)+1;
-    player.positionTop = Math.floor(gameBoard.getBoundingClientRect().top)+2;
-    gridX = 0;
-    gridY = 0;
+    
+    loadJson();
+
     isComplete = false, isPortal = false;    
 
-    player.htmlElement.style.left = player.positionLeft + 'px';
-    player.htmlElement.style.top = player.positionTop + 'px';
-    
 
-    setupTiles();
 }
 
 function setupTiles()
 {
     const lblScore = document.getElementById('lblScore');
     lblScore.innerText = "You have " + score + " points"; 
-
-    gameGrid = []
-    for(let i=0;i<gameGridBase.length;i++)
-    {
-        let row = [];
-        for(let j=0;j<gameGridBase[i].length;j++)
-        {
-            row[j] = gameGridBase[i][j];
-        }
-
-        gameGrid[i] = row;
-    }
     
     level++;
     const lblLevel = document.getElementById('lblLevel');
     lblLevel.innerText = 'Level ' + level;
-    
-    alterMaze();
 
     let costCount = 0;
     let boostCount = 0;
@@ -358,6 +325,9 @@ function setupTiles()
             if (gridTile.type === startType)
             {
                 newTile.classList.add('tileStart');
+                gridX = i;
+                gridY = j;
+                setPlayerStart();
             }
 
             if (gridTile.type === finishType)
@@ -497,182 +467,36 @@ function teleportPlayer()
     }
 }
 
-function alterMaze()
+function loadJson()
 {
-    randomChange = Math.floor(Math.random() * 100);
+    randomChange = Math.floor(Math.random() * 3);
+    let fileName = 'gridBase0.json';
 
-    if (randomChange < 95)
-    {
-        gameGrid[5][3].allowedMoves = keysW;
-        gameGrid[6][3].allowedMoves = keysAD;
-        gameGrid[6][2].allowedMoves = keysAWD;
-        gameGrid[6][4].allowedMoves = keysAWS;
-        gameGrid[7][3].allowedMoves = keysS;
-        
-        gameGrid[7][3].hasGate = '';
-        gameGrid[7][4].hasGate = '';
-
-        gameGrid[9][7].hasGate = keysD;
-        gameGrid[9][8].hasGate = keysA;
+    switch(randomChange){
+        case 0:
+            {
+                fileName = 'gridBase1.json';
+                break;
+            }
+        case 1:
+            {
+                fileName = 'gridBase2.json';
+                break;
+            }
     }
 
-    if (randomChange < 90)
-    {
-        gameGrid[7][7].allowedMoves = keysW;
-        gameGrid[8][7].allowedMoves = keysS;
-    }
-
-    if (randomChange < 85)
-    {
-        gameGrid[6][2].allowedMoves = keysWD;
-        gameGrid[7][2].allowedMoves = keysS;
-    }
-
-    if (randomChange < 80)
-    {
-        gameGrid[2][0].allowedMoves = keysWS;
-        gameGrid[3][0].allowedMoves = keysWSD;
-    }
-
-    if (randomChange < 75)
-    {
-        gameGrid[3][6].allowedMoves = keysS;
-        gameGrid[2][6].allowedMoves = keysW;
-    }
-
-    if (randomChange < 70)
-    {
-        gameGrid[3][0].allowedMoves = keysWD;
-        gameGrid[4][0].allowedMoves = keysSD;
-        gameGrid[4][1].allowedMoves = keysAD;
-    }
-
-    if (randomChange < 65)
-    {
-        gameGrid[0][8].allowedMoves = keysA;
-        gameGrid[0][9].allowedMoves = keysS;
-    }
-
-    if (randomChange < 60)
-    {
-        gameGrid[5][5].allowedMoves = keysWA;
-        gameGrid[5][6].allowedMoves = keysWS;
-        gameGrid[5][7].allowedMoves = keysWD;
-        gameGrid[6][6].allowedMoves = keysAWD;
-    }
-
-    if (randomChange < 55)
-    {
-        gameGrid[3][3].allowedMoves = keysAS;
-        gameGrid[3][4].allowedMoves = keysD;
-        gameGrid[4][3].allowedMoves = keysAWSD;
-    }
-
-    if (randomChange < 50)
-    {
-        gameGrid[1][3].allowedMoves = keysAS;
-        gameGrid[1][4].allowedMoves = keysD;
-        gameGrid[2][3].allowedMoves = keysAWD;
-    }
-
-    if (randomChange < 45)
-    {
-        gameGrid[2][7].allowedMoves = keysW;
-        gameGrid[3][7].allowedMoves = keysS;
-    }
-
-    if (randomChange < 40)
-    {
-        gameGrid[8][4].allowedMoves = keysW;
-        gameGrid[8][5].allowedMoves = keysSD;
-        gameGrid[9][5].allowedMoves = keysAWD;
-    }
-
-    if (randomChange < 35)
-    {
-        gameGrid[4][5].allowedMoves = keysAWD;
-        gameGrid[4][6].allowedMoves = keysAWS;
-        gameGrid[5][5].allowedMoves = keysA;
-
-        gameGrid[2][2].hasGate = '';
-        gameGrid[3][2].hasGate = '';
-
-        gameGrid[2][2].allowedMoves = keysAD;
-        gameGrid[3][2].allowedMoves = keysAD;
-
-        gameGrid[4][4].hasGate = keysS;
-        gameGrid[5][4].hasGate = keysW;
-
-        gameGrid[4][9].hasGate = keysS;
-        gameGrid[5][9].hasGate = keysW;
-    }
-
-    if (randomChange < 30)
-    {
-        gameGrid[7][0].allowedMoves = keysWS;
-        gameGrid[8][0].allowedMoves = keysWS;
-        gameGrid[8][1].allowedMoves = keysW;
-    }
-
-    if (randomChange < 25)
-    {
-        gameGrid[5][0].allowedMoves = keysW;
-        gameGrid[6][0].allowedMoves = keysSD;
-        gameGrid[6][1].allowedMoves = keysAWS;
-
-        gameGrid[1][5].hasGate = '';
-        gameGrid[1][6].hasGate = '';
-
-        gameGrid[2][5].hasGate = keysD;
-        gameGrid[2][6].hasGate = keysA;
-    }
-
-    if (randomChange < 20)
-    {
-        gameGrid[4][4].allowedMoves = keysA;
-        gameGrid[4][5].allowedMoves = keysWD;
-        
-        gameGrid[4][9].allowedMoves = keysAS;
-        gameGrid[5][9].allowedMoves = keysAWS;
-    }
-
-    if (randomChange < 15)
-    {
-        gameGrid[0][2].allowedMoves = keysAS;
-        gameGrid[1][2].allowedMoves = keysWA;
-        gameGrid[1][1].allowedMoves = keysASD;
-        gameGrid[0][3].allowedMoves = keysD;
-        gameGrid[1][3].allowedMoves = keysS;
-    }
-
-    if (randomChange < 10)
-    {
-        gameGrid[8][4].allowedMoves = keysWS;
-        gameGrid[9][4].allowedMoves = keysAW;
-        gameGrid[9][5].allowedMoves = keysWD;
-        
-        gameGrid[3][2].allowedMoves = keysA;
-        gameGrid[3][3].allowedMoves = keysSD;
-        gameGrid[3][4].allowedMoves = keysAD;
-        
-    }
-
-    if (randomChange < 5)
-    {
-        gameGrid[5][1].allowedMoves = keysD;
-        gameGrid[6][1].allowedMoves = keysAS;
-        gameGrid[8][1].allowedMoves = keysWS;
-        gameGrid[9][1].allowedMoves = keysWD;
-
-        gameGrid[7][3].hasGate = '';
-        gameGrid[7][4].hasGate = '';
-
-        gameGrid[5][6].hasGate = keysD;
-        gameGrid[5][7].hasGate = keysA;
-
-        gameGrid[9][7].hasGate = '';
-        gameGrid[9][8].hasGate = '';
-    }
+    fetch(fileName)
+    .then(response => response.json())
+    .then(json => {gameGrid = json; setupTiles() });
 }
 
-setupTiles();
+function setPlayerStart()
+{
+    player.positionLeft = playerStartLeft + (36 * gridY);
+    player.positionTop = playerStartTop + (36 * gridX);
+
+    player.htmlElement.style.left = player.positionLeft + 'px';
+    player.htmlElement.style.top = player.positionTop + 'px';
+}
+
+resetMaze();
