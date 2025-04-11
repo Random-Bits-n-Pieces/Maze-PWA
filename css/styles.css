@@ -80,6 +80,7 @@ body {
   color: rgb(200, 200, 200);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  touch-action: pan-y;
 }
 
 main {
