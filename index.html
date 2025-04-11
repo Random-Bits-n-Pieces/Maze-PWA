@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/fontawesome.min.css" />
     <link rel="stylesheet" href="css/solid.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- <link rel="manifest" href="manifest.json"> -->
+    <link rel="manifest" href="manifest.json">
     <title>Maze</title>
 </head>
 
@@ -21,17 +21,28 @@
         </section>
         <section id="sectionInstructions" class="hidden">
             <h2>How to play</h2>
-            <p>Use the arrow keys to move from the start location to the finish.</p>
+            <p>Use the WASD keys to move from the start location to the finish.</p>
             <button id="btnPlay">Play</button>
         </section>
         <section id="sectionMaze">
             <div class="gameBoard">
             </div>
             <div class="player"><i class="fa-solid fa-person"></i></div>
-
+            <div class="keys">
+                <div>
+                    <button id="btnW">W</button>
+                </div>
+                <div><button id="btnS">S</button>
+                    <button id="btnA">A</button>
+                    <button id="btnD">D</button>
+                </div>
+            </div>
             <div class="gameInfo">
                 <label id="lblLevel"></label><br />
                 <label id="lblScore"></label>
+            </div>
+            <div>
+                <p><small>This is a work in progress</small></p>
             </div>
         </section>
     </main>
@@ -39,11 +50,11 @@
 
     </script>
     <script src="main.js"></script>
-    <!-- <script>
+    <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js', { scope: '/Slider-Puzzle-PWA/' });
+            navigator.serviceWorker.register('sw.js', { scope: '/Maze-PWA/' });
         }
-    </script> -->
+    </script>
 </body>
 
 </html>

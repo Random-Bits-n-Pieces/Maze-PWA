@@ -1,0 +1,18 @@
+{
+  "lang": "en-us",
+  "name": "Maze App",
+  "short_name": "Maze",
+  "description": "Make your way through as many levels as you can.",
+  "scope": "/Maze-PWA/",
+  "start_url": "/Maze-PWA/",
+  "background_color": "#2a86b2",
+  "theme_color": "#2a86b2",
+  "orientation": "any",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/Maze-PWA/Icon512.png",
+      "sizes": "512x512"
+    }
+  ]
+}

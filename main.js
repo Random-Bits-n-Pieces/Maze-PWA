@@ -11,6 +11,11 @@ const normalType = 0, boost1Type = 10, boost2Type = 20, boost3Type = 30, cost1Ty
 const keysA = 'a', keysS = 's', keysW = 'w', keysD = 'd', keysAD = 'ad', keysAS = 'as', keysAW = 'aw',keysWS = 'ws', keysWA = 'wa', keysWD = 'wd', keysSD = 'sd';
 const keysASD = 'asd', keysAWD = 'awd', keysWSD = 'wsd', keysAWS='aws', keysAWSD = 'awsd';
 
+const btnW = document.getElementById("btnW");
+const btnS = document.getElementById("btnS");
+const btnA = document.getElementById("btnA");
+const btnD = document.getElementById("btnD");
+
 let gameGrid = [];
 
 let gridX = 0;
@@ -23,13 +28,21 @@ let isComplete = false, isPortal = false;
 // player.htmlElement.style.top = player.positionTop + 'px';
 
 window.addEventListener('keypress', (event) =>  {
+    ProcessKeyPress(event.keyCode);
+});
 
+btnW.addEventListener('click', () => { ProcessKeyPress(119)});
+btnS.addEventListener('click', () => { ProcessKeyPress(115)});
+btnA.addEventListener('click', () => { ProcessKeyPress(97)});
+btnD.addEventListener('click', () => { ProcessKeyPress(100)});
+
+function ProcessKeyPress(keyValue){
     if (isComplete) return;
     
     let currentTile = gameGrid[gridX][gridY];
     const currentType = currentTile.type;
 
-    switch(event.keyCode)
+    switch(keyValue)
     {
         case 119:
             {
@@ -71,8 +84,7 @@ window.addEventListener('keypress', (event) =>  {
             lblScore.innerText = "Game over"; 
         }
     }
-
-});
+}
 
 function MoveUp(currentTile)
 {
@@ -268,20 +280,20 @@ function setupTiles()
             {
                 let randomTile = Math.floor(Math.random() * 500);
 
-                if (costCount < 5)
+                if (costCount < 3 + Math.floor(0.3 * level))
                 {
-                    if (randomTile < 15)
+                    if (randomTile < 150)
                     {
                         costCount++;
                         gridTile.type = cost1Type;
                     }
 
-                    if (randomTile < 10)
+                    if (randomTile < 100)
                     {
                         gridTile.type = cost2Type;
                     }
 
-                    if (randomTile < 5)
+                    if (randomTile < 50)
                     {
                         gridTile.type = cost3Type;
                     }
@@ -469,21 +481,7 @@ function teleportPlayer()
 
 function loadJson()
 {
-    randomChange = Math.floor(Math.random() * 3);
-    let fileName = 'gridBase0.json';
-
-    switch(randomChange){
-        case 0:
-            {
-                fileName = 'gridBase1.json';
-                break;
-            }
-        case 1:
-            {
-                fileName = 'gridBase2.json';
-                break;
-            }
-    }
+    let fileName = 'gridBase' + Math.floor(Math.random() * 6) + '.json';
 
     fetch(fileName)
     .then(response => response.json())

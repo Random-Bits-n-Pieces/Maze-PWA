@@ -265,3 +265,15 @@ main {
 .gateBottom.open {
   border-bottom-style: dotted;
 }
+
+.keys {
+  margin: 20px 0;
+}
+
+.keys > div {
+  margin-bottom: 6px;
+}
+
+.keys button {
+  width: 30px;
+}
