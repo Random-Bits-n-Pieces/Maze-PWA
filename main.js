@@ -77,6 +77,7 @@ function ProcessKeyPress(keyValue){
     {
         isComplete = true;
         if (score > 0){
+            score = score + Math.floor((0.5 * level));
             resetMaze();
         }
         else{
@@ -481,7 +482,7 @@ function teleportPlayer()
 
 function loadJson()
 {
-    let fileName = 'gridBase' + Math.floor(Math.random() * 6) + '.json';
+    let fileName = 'gridBase' + Math.floor(Math.random() * 10) + '.json';
 
     fetch(fileName)
     .then(response => response.json())

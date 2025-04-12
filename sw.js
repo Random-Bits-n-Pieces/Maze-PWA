@@ -13,6 +13,10 @@ const CACHE_CONTENT = [
   '/gridBase3.json',
   '/gridBase4.json',
   '/gridBase5.json',
+  '/gridBase6.json',
+  '/gridBase7.json',
+  '/gridBase8.json',
+  '/gridBase9.json',
 ];
 
 // Use the install event to pre-cache all initial resources.
